@@ -46,7 +46,7 @@ jobs:
         run: |
           cd action_build_lahaina_system
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
   
   taro:
@@ -69,7 +69,7 @@ jobs:
         run: |
           cd action_build_taro_system
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
 
   kalama:
@@ -92,7 +92,7 @@ jobs:
         run: |
           cd action_build_kalama_system
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
 
   PayloadToFlash:
@@ -115,7 +115,7 @@ jobs:
         run: |
           cd PayloadToFlash
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
 
   PCEngine_Check:
@@ -138,7 +138,7 @@ jobs:
         run: |
           cd PCEngine_Check
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
 
   rubens:
@@ -161,5 +161,5 @@ jobs:
         run: |
           cd action_build_rubens_system
           git submodule update --remote --merge
-          git commit -am "更新 Binary" || echo "无需更新 Binary"
+          git commit -am "${{ needs.GetCommitMessage.outputs.message }}" || echo "无需更新 Binary"
           git push origin main
